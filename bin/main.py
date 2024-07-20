@@ -15,7 +15,10 @@ app = typer.Typer(help="AI utility")
 def get_model_info(path: Annotated[str, typer.Option("--path", "-p", help="Path to the model file")]):
     file_item = Path(path)
     model_info = get_civitai_model_info_by_hash(calculate_file_hash(file_item))
-    print(model_info)
+    if model_info is None:
+        print("未找到模型信息")
+    else:
+        print(model_info)
 
 @app.command('preview', help='Get model preview image.')
 def preview_model(path: Annotated[str, typer.Option("--path", "-p", help="The path to the directory")] = os.getcwd(),
