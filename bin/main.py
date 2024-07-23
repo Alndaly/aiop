@@ -67,7 +67,7 @@ def classify_model(path: Annotated[str, typer.Option("--path", "-p", help="Path 
                             if response.status_code == 200:
                                 with open(preview_path, "wb") as f:
                                     f.write(response.content)
-            progress_bar.update(1)
+                progress_bar.update(1)
         if not recursion:
             dirnames[:] = []  # Skip subdirectories in this git repository
 
