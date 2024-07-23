@@ -10,7 +10,7 @@ with open("./LICENSE", "r", encoding="utf-8") as fp:
 
 setup(
     name = "aiop",
-	version = "0.0.3",
+	version = "0.0.4",
 	author = "Kinda Hall",
 	author_email = "1142704468@qq.com",
 	platforms = "any",
